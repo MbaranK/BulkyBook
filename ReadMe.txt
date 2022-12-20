@@ -1,0 +1,1 @@
+ASP.Net Core MVC(.Net 6) projects. Containing basic CRUD applications. 
