@@ -1,0 +1,12 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\BulkyBookWeb",
+    "\\BulkyBookWeb\\Migrations",
+    "\\BulkyBookWeb\\Models",
+    "\\BulkyBookWeb\\Views\\Category",
+    "\\BulkyBookWeb\\Views\\Shared"
+  ],
+  "SelectedNode": "\\BulkyBookWeb\\BulkyBookWeb.csproj",
+  "PreviewInSolutionExplorer": false
+}

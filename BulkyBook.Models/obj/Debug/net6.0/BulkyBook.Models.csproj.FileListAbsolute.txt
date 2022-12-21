@@ -1,0 +1,12 @@
+C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBook.Models\bin\Debug\net6.0\BulkyBook.Models.deps.json
+C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBook.Models\bin\Debug\net6.0\BulkyBook.Models.dll
+C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBook.Models\bin\Debug\net6.0\BulkyBook.Models.pdb
+C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBook.Models\obj\Debug\net6.0\BulkyBook.Models.csproj.AssemblyReference.cache
+C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBook.Models\obj\Debug\net6.0\BulkyBook.Models.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBook.Models\obj\Debug\net6.0\BulkyBook.Models.AssemblyInfoInputs.cache
+C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBook.Models\obj\Debug\net6.0\BulkyBook.Models.AssemblyInfo.cs
+C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBook.Models\obj\Debug\net6.0\BulkyBook.Models.csproj.CoreCompileInputs.cache
+C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBook.Models\obj\Debug\net6.0\BulkyBook.Models.dll
+C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBook.Models\obj\Debug\net6.0\refint\BulkyBook.Models.dll
+C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBook.Models\obj\Debug\net6.0\BulkyBook.Models.pdb
+C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBook.Models\obj\Debug\net6.0\ref\BulkyBook.Models.dll

@@ -557,3 +557,7 @@ C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBookWeb\bin\Debug\net6
 C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
 C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\Microsoft.Extensions.DependencyModel.dll
 C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBookWeb\obj\Debug\net6.0\BulkyBookWeb.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\BulkyBook.DataAccess.dll
+C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\BulkyBook.Models.dll
+C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\BulkyBook.DataAccess.pdb
+C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\BulkyBook.Models.pdb
