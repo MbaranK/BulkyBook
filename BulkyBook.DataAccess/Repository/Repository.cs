@@ -20,6 +20,7 @@ namespace BulkyBook.DataAccess.Repository
         public Repository(ApplicationDbContext db)
         {
             _db = db;
+            //_db.Products.Include(u => u.Category);
             this.dbSet = _db.Set<T>(); // This is just the basic setup that we have to do to implement a solid repository that will work with all the conditions. Bu generic class olduğu için herhangi bir sınıfa implement edebiliriz. Bu yüzden bu işlemi yapmak zorundayız.
             // dbSet, CategoryController daki _db.Category ile birebir aynı işlevi görüyor.
         }
@@ -29,17 +30,34 @@ namespace BulkyBook.DataAccess.Repository
             dbSet.Add(entity);
         }
 
-        public IEnumerable<T> GetAll()
+        //includeProp - "Category,CoverType" gibi.
+        public IEnumerable<T> GetAll(string? includeProperties = null)
         {
             IQueryable<T> query = dbSet;
+            //Foreign keyler null değer olarak geldi diye line38-44 girdik.
+            if(includeProperties != null)
+            {
+                foreach(var includeProp in includeProperties.Split(new char[] { ','},StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(includeProp);
+                }
+            }
             return query.ToList();
         }
 
-        public T GetFİrstOrDefault(Expression<Func<T, bool>> filter)
+        public T GetFİrstOrDefault(Expression<Func<T, bool>> filter, string? includeProperties = null)
         {
             IQueryable<T> query = dbSet;
 
             query = query.Where(filter);
+            //Foreign keyler null değer olarak geldi diye girdik.
+            if (includeProperties != null)
+            {
+                foreach (var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+                {
+                    query = query.Include(includeProp);
+                }
+            }
 
             return query.FirstOrDefault();
         }
