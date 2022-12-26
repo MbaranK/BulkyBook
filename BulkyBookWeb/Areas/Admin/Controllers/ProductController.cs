@@ -1,15 +1,13 @@
-﻿using BulkyBook.DataAccess.Repository;
-using BulkyBook.DataAccess.Repository.IRepository;
-using BulkyBook.Models;
+﻿using BulkyBook.DataAccess.Repository.IRepository;
 using BulkyBook.Models.ViewModels;
-using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Components.Routing;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using System.Collections.Generic;
-using System.Drawing.Text;
-using System.Runtime.Remoting;
+using Microsoft.AspNetCore.Mvc;
+
 
 namespace BulkyBookWeb.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class ProductController : Controller
     {
         private readonly IUnitofWork _unitofWork;
@@ -22,11 +20,11 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             _hostEnvironment = hostEnvironment;
         }
         public IActionResult Index()
-        {            
+        {
             return View();
         }
 
-        
+
         // UPSERT GET 
         //Upsert = Update ve insert metodlarını birlikte kullandık burada.(update,create)
         public IActionResult Upsert(int? id)
@@ -67,7 +65,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
                 //CREATE PRODUCT
                 //ViewBag.CategoryList = CategoryList;
                 //ViewData["CoverTypeList"] = CoverTypeList;
-               
+
                 return View(productVM);
             }
             else
@@ -76,8 +74,8 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
                 productVM.product = _unitofWork.Product.GetFİrstOrDefault(u => u.Id == id);
                 return View(productVM);
             }
-                
-                   
+
+
         }
 
         //Upsert POST
@@ -85,33 +83,33 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Upsert(ProductVM obj, IFormFile file)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 //resmi yükleyeceğimiz roota ulaşmak için girilen kod.
                 string wwwRootPath = _hostEnvironment.WebRootPath;
-                if(file!= null)
+                if (file != null)
                 {
                     string fileName = Guid.NewGuid().ToString();
                     var uploads = Path.Combine(wwwRootPath, @"Images\Product");
                     var extension = Path.GetExtension(file.FileName);
-                    if(obj.product.ImageUrl != null)
+                    if (obj.product.ImageUrl != null)
                     {
                         //upload yolunda \ olmadığı için onu trimledik. Resim updatelediğimzde eski resmin silinmesini sağladık.
                         var oldImagePath = Path.Combine(wwwRootPath, obj.product.ImageUrl.TrimStart('\\'));
-                        if(System.IO.File.Exists(oldImagePath))
+                        if (System.IO.File.Exists(oldImagePath))
                         {
                             System.IO.File.Delete(oldImagePath);
                         }
                     }
 
                     //copying to file uploaded to Images,Products
-                    using (var fileStreams = new FileStream(Path.Combine(uploads,fileName+extension),FileMode.Create))
+                    using (var fileStreams = new FileStream(Path.Combine(uploads, fileName + extension), FileMode.Create))
                     {
                         file.CopyTo(fileStreams);
                     }
                     obj.product.ImageUrl = @"\Images\Product\" + fileName + extension;
                 }
-                if(obj.product.Id == 0 )
+                if (obj.product.Id == 0)
                 {
                     _unitofWork.Product.Add(obj.product);
                 }
@@ -129,18 +127,18 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
         }
 
 
-        
+
         #region API CALLS
         [HttpGet]
         public IActionResult GetAll()
         {
-            var productList = _unitofWork.Product.GetAll(includeProperties:"Category,CoverType");
+            var productList = _unitofWork.Product.GetAll(includeProperties: "Category,CoverType");
             return Json(new { data = productList });
         }
 
         //Delete Post
         [HttpDelete]
-        
+
         public IActionResult Delete(int? id)
         {
             var obj = _unitofWork.Product.GetFİrstOrDefault(u => u.Id == id);

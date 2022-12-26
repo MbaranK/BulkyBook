@@ -3,6 +3,9 @@ using BulkyBook.DataAccess.Repository;
 using BulkyBook.DataAccess.Repository.IRepository;
 using BulkyBookWeb.DataAccess;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using BulkyBook.Utility;
 
 namespace BulkyBookWeb
 {
@@ -15,7 +18,11 @@ namespace BulkyBookWeb
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+            //AddDefaultIdentity ' yi deðiþtirdik role eklemek için Custom Identity oluþturduðumuzda token oluþturmak zorundayýz.
+            builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultTokenProviders().AddEntityFrameworkStores<ApplicationDbContext>();
             builder.Services.AddScoped<IUnitofWork, UnitofWork>();
+            builder.Services.AddSingleton<IEmailSender, EmailSender>();
             builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
             var app = builder.Build();
@@ -33,8 +40,10 @@ namespace BulkyBookWeb
 
             app.UseRouting();
 
-            app.UseAuthorization();
+                        app.UseAuthentication();;
 
+            app.UseAuthorization();
+            app.MapRazorPages();
             app.MapControllerRoute(
                 name: "default",
                 pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");

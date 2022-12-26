@@ -5,6 +5,7 @@ using System.Drawing.Text;
 
 namespace BulkyBookWeb.Areas.Admin.Controllers
 {
+    [Area("Admin")]
     public class CoverTypeController : Controller
     {
         private readonly IUnitofWork _unitofWork;
