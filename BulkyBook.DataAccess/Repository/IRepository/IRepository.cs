@@ -14,7 +14,7 @@ namespace BulkyBook.DataAccess.Repository.IRepository
         //Edit işlemi yaparken Id ye göre prop değerlerini bulmamızı sağlayan kod.
         //Find da kullanabalirdik ancak o method sadece primary key olunca kullanılıyor.O yüzden aşağıdaki kod daha genel bir şekilde işlemi gerçekleştirmemizi sağlıyor. (EDİT GET METHOD- LİNE15)
         T GetFİrstOrDefault(Expression<Func<T,bool>>filter, string? includeProperties = null);
-        IEnumerable<T> GetAll(string? includeProperties = null); // Category(mesela) sınıfının içindeki (table) bütün herşeyi getirmek için kullandığımız kod
+        IEnumerable<T> GetAll(Expression<Func<T, bool>>? filter=null, string? includeProperties = null); // Category(mesela) sınıfının içindeki (table) bütün herşeyi getirmek için kullandığımız kod
         void Add(T entity); // entity yazmak zorundayız. // obje ekleme metodu
         void Remove(T entity);
 
