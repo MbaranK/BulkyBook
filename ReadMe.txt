@@ -1,13 +1,1 @@
-ASP.Net Core MVC(.Net 6) project. Containing Scaffold Identity, CRUD operations..
-
---> MS SQL Server, C# .Net Core, EF(Code First)
-
---> ASP.NET Identity - User Management Library
-
---> Object Oriented Programming Aspects
-
---> Repository Design Pattern
-
---> Model- View- Controller
-
---> Used Free Templates for frontend parts
+ASP.Net Core MVC(.Net 6) project. 
