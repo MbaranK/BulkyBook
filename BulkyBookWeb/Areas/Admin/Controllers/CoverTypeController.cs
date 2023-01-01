@@ -51,6 +51,7 @@ namespace BulkyBookWeb.Areas.Admin.Controllers
             }
 
             var coverTypefromDbFirst = _unitofWork.CoverType.GetFİrstOrDefault(u => u.Id == id);
+             
 
             if(coverTypefromDbFirst == null)
             {

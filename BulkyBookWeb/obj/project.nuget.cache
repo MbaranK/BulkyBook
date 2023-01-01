@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "B8OFs8oDcjMemyMV+Q0p1am/aRlwV8V7YGS7h04gSLo6j62q3IkDTNwwktP+jd5e2Y7j2nkz5wQDh/5QrHcgOg==",
+  "dgSpecHash": "KOKOS6PK6Jga8DUeEIwkFKr5L8RO609hPVh0gMOlTiZkRvWzcu1G/WU/SBd4Bb2NKfqgOUf8TIZ+lrWxpH0RvQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\baran\\Desktop\\C# Projects\\ASP.NET\\BulkyBook\\BulkyBookWeb\\BulkyBookWeb.csproj",
   "expectedPackageFiles": [
@@ -140,6 +140,7 @@
     "C:\\Users\\baran\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\baran\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\baran\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\baran\\.nuget\\packages\\stripe.net\\41.3.0\\stripe.net.41.3.0.nupkg.sha512",
     "C:\\Users\\baran\\.nuget\\packages\\system.appcontext\\4.3.0\\system.appcontext.4.3.0.nupkg.sha512",
     "C:\\Users\\baran\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
     "C:\\Users\\baran\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",

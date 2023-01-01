@@ -6,6 +6,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using BulkyBook.Utility;
+using Stripe;
 
 namespace BulkyBookWeb
 {
@@ -18,6 +19,7 @@ namespace BulkyBookWeb
             // Add services to the container.
             builder.Services.AddControllersWithViews();
             builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+            builder.Services.Configure<StripeSettings>(builder.Configuration.GetSection("StripeSettings"));
 
             //AddDefaultIdentity ' yi deðiþtirdik role eklemek için Custom Identity oluþturduðumuzda token oluþturmak zorundayýz.
             builder.Services.AddIdentity<IdentityUser, IdentityRole>().AddDefaultTokenProviders().AddEntityFrameworkStores<ApplicationDbContext>();
@@ -45,6 +47,8 @@ namespace BulkyBookWeb
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            StripeConfiguration.ApiKey = builder.Configuration.GetSection("StripeSettings:SecretKey").Get<string>(); //assigning global api key in our pipeline
 
                         app.UseAuthentication();;
 
