@@ -50,9 +50,18 @@ namespace BulkyBook.DataAccess.Repository
             return query.ToList();
         }
 
-        public T GetFİrstOrDefault(Expression<Func<T, bool>> filter, string? includeProperties = null)
+        public T GetFİrstOrDefault(Expression<Func<T, bool>> filter, string? includeProperties = null, bool tracked = true)
         {
-            IQueryable<T> query = dbSet;
+            IQueryable<T> query;
+
+            if(tracked)
+            {
+                query = dbSet;
+            }
+            else
+            {
+                query = dbSet.AsNoTracking(); // EF Coreun objeyi methoddan aldığı gibi tracklemesini istemediğimiz için bu kodu giriyoruz. Order Controller sayfasında ki UpdateOrderDetail methodu için yazdık.
+            }
 
             query = query.Where(filter);
             //Foreign keyler null değer olarak geldi diye girdik.
