@@ -8,6 +8,6 @@ ASP.Net Core MVC(.Net 6) project using features like;
 
 --> Repository Design Pattern
 
---> Model- View- Controller
+--> Unit of Work
 
 --> Used Free Templates for frontend parts
