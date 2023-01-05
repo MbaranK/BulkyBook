@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "net6.0": {
+      "Facebook/7.0.6": {
+        "type": "package",
+        "compile": {
+          "lib/net45/Facebook.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net45/Facebook.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Humanizer.Core/2.8.26": {
         "type": "package",
         "compile": {
@@ -124,6 +137,22 @@
             "related": ".xml"
           }
         }
+      },
+      "Microsoft.AspNetCore.Authentication.Facebook/6.0.12": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.Facebook.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/Microsoft.AspNetCore.Authentication.Facebook.dll": {
+            "related": ".xml"
+          }
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
       },
       "Microsoft.AspNetCore.Authorization/2.2.0": {
         "type": "package",
@@ -4493,6 +4522,38 @@
     }
   },
   "libraries": {
+    "Facebook/7.0.6": {
+      "sha512": "D9nlWZb88S4U+eh1pUDQ+AkSkiht6m0eFpxKFddZnQSSFTnncvDMBEnNODy4fOIOjWQIiOXRVbuY04jCPyWqkw==",
+      "type": "package",
+      "path": "facebook/7.0.6",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.txt",
+        "facebook.7.0.6.nupkg.sha512",
+        "facebook.nuspec",
+        "lib/net35-client/Facebook.dll",
+        "lib/net35-client/Facebook.xml",
+        "lib/net40-client/Facebook.dll",
+        "lib/net40-client/Facebook.xml",
+        "lib/net45/Facebook.dll",
+        "lib/net45/Facebook.xml",
+        "lib/portable-win81+wpa81/Facebook.dll",
+        "lib/portable-win81+wpa81/Facebook.xml",
+        "lib/sl5/Facebook.dll",
+        "lib/sl5/Facebook.xml",
+        "lib/win8/Facebook.dll",
+        "lib/win8/Facebook.xml",
+        "lib/wp71/Facebook.dll",
+        "lib/wp71/Facebook.xml",
+        "lib/wp8/Facebook.dll",
+        "lib/wp8/Facebook.xml",
+        "lib/wp81/Facebook.dll",
+        "lib/wp81/Facebook.xml",
+        "readme.txt",
+        "serializers/JsonNetSerializer.cs"
+      ]
+    },
     "Humanizer.Core/2.8.26": {
       "sha512": "OiKusGL20vby4uDEswj2IgkdchC1yQ6rwbIkZDVBPIR6al2b7n3pC91elBul9q33KaBgRKhbZH3+2Ur4fnWx2A==",
       "type": "package",
@@ -4622,6 +4683,21 @@
         "lib/netstandard2.0/Microsoft.AspNetCore.Authentication.Core.xml",
         "microsoft.aspnetcore.authentication.core.2.2.0.nupkg.sha512",
         "microsoft.aspnetcore.authentication.core.nuspec"
+      ]
+    },
+    "Microsoft.AspNetCore.Authentication.Facebook/6.0.12": {
+      "sha512": "VaYKm9Bxmc5xHMieLEWpyPEKezB24ORJLB21V+ROqF6Dh5uta93ivCygG1E8yclXOqZw8cPLnJtgMvGmSZReOw==",
+      "type": "package",
+      "path": "microsoft.aspnetcore.authentication.facebook/6.0.12",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Icon.png",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/net6.0/Microsoft.AspNetCore.Authentication.Facebook.dll",
+        "lib/net6.0/Microsoft.AspNetCore.Authentication.Facebook.xml",
+        "microsoft.aspnetcore.authentication.facebook.6.0.12.nupkg.sha512",
+        "microsoft.aspnetcore.authentication.facebook.nuspec"
       ]
     },
     "Microsoft.AspNetCore.Authorization/2.2.0": {
@@ -11953,6 +12029,8 @@
     "net6.0": [
       "BulkyBook.DataAccess >= 1.0.0",
       "BulkyBook.Utility >= 1.0.0",
+      "Facebook >= 7.0.6",
+      "Microsoft.AspNetCore.Authentication.Facebook >= 6.0.12",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 6.0.12",
       "Microsoft.AspNetCore.Identity.UI >= 6.0.12",
       "Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation >= 6.0.12",
@@ -12017,6 +12095,14 @@
       "net6.0": {
         "targetAlias": "net6.0",
         "dependencies": {
+          "Facebook": {
+            "target": "Package",
+            "version": "[7.0.6, )"
+          },
+          "Microsoft.AspNetCore.Authentication.Facebook": {
+            "target": "Package",
+            "version": "[6.0.12, )"
+          },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
             "version": "[6.0.12, )"
@@ -12086,5 +12172,17 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.402\\RuntimeIdentifierGraph.json"
       }
     }
-  }
+  },
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Facebook 7.0.6' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Facebook",
+      "targetGraphs": [
+        "net6.0"
+      ]
+    }
+  ]
 }

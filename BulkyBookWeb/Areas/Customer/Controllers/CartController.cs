@@ -201,6 +201,7 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
             }
             
             List<ShoppingCart> shoppingCarts = _unitofWork.ShoppingCart.GetAll(u => u.ApplicationUserId == orderHeader.ApplicationUserId).ToList();
+            HttpContext.Session.Clear(); // Sipariş verdikten sonra sepetin boşalması için
             _unitofWork.ShoppingCart.RemoveRange(shoppingCarts);
             _unitofWork.Save();
             return View(id);
@@ -220,6 +221,8 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
             if(cart.Count <= 1)
             {
                 _unitofWork.ShoppingCart.Remove(cart);
+                var count = _unitofWork.ShoppingCart.GetAll(u => u.ApplicationUserId == cart.ApplicationUserId).ToList().Count - 1;
+                HttpContext.Session.SetInt32(SD.SessionCart, count);
             }
             else
             {
@@ -234,6 +237,9 @@ namespace BulkyBookWeb.Areas.Customer.Controllers
             var cart = _unitofWork.ShoppingCart.GetFİrstOrDefault(u => u.Id == cartId);
             _unitofWork.ShoppingCart.Remove(cart);
             _unitofWork.Save();
+            // sepetteki sayıyı azaltamak için girilen kod(session)
+            var count = _unitofWork.ShoppingCart.GetAll(u => u.ApplicationUserId == cart.ApplicationUserId).ToList().Count;
+            HttpContext.Session.SetInt32(SD.SessionCart, count);
             return RedirectToAction(nameof(Index));
         }
 

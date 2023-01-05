@@ -569,3 +569,5 @@ C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBookWeb\bin\Debug\net6
 C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\MailKit.dll
 C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\MimeKit.dll
 C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\BouncyCastle.Crypto.dll
+C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.Facebook.dll
+C:\Users\baran\Desktop\C# Projects\ASP.NET\BulkyBook\BulkyBookWeb\bin\Debug\net6.0\Facebook.dll

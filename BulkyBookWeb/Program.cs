@@ -26,11 +26,25 @@ namespace BulkyBookWeb
             builder.Services.AddScoped<IUnitofWork, UnitofWork>();
             builder.Services.AddSingleton<IEmailSender, EmailSender>();
             builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
+            builder.Services.AddAuthentication().AddFacebook(options =>
+            {
+                options.AppId = "1176548696307315";
+                options.AppSecret = "61aacb691d4e1e23d544785e726b6e23";
+            });
             builder.Services.ConfigureApplicationCookie(options =>
             {
                 options.LoginPath = $"/Identity/Account/Login";
                 options.LogoutPath = $"/Identity/Account/Logout";
                 options.AccessDeniedPath = $"/Identity/Account/AccessDenied";
+            });
+
+            //Shopping cart da kaç tane ürün olduðunu göstermek için session ekliyoruz.(adding session to container)
+            builder.Services.AddDistributedMemoryCache();
+            builder.Services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(100);
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
             });
 
             var app = builder.Build();
@@ -53,6 +67,7 @@ namespace BulkyBookWeb
                         app.UseAuthentication();;
 
             app.UseAuthorization();
+            app.UseSession();// adding session to pipeline.
             app.MapRazorPages();
             app.MapControllerRoute(
                 name: "default",

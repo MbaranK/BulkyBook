@@ -360,6 +360,14 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "dependencies": {
+            "Facebook": {
+              "target": "Package",
+              "version": "[7.0.6, )"
+            },
+            "Microsoft.AspNetCore.Authentication.Facebook": {
+              "target": "Package",
+              "version": "[6.0.12, )"
+            },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
               "version": "[6.0.12, )"
